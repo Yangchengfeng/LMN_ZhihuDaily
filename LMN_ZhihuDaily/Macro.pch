@@ -1,0 +1,36 @@
+//
+//  Macro.pch
+//  LMN_ZhihuDaily
+//
+//  Created by 阳丞枫 on 16/9/9.
+//  Copyright © 2016年 chengfengYang. All rights reserved.
+//
+
+#ifndef Macro_pch
+#define Macro_pch
+
+#import "BaseViewController.h"
+#import "AFHTTPSessionManager.h"
+#import "NetOperation.h"
+#import "AFNetworking.h"
+#import "Masonry.h"
+#import "SDWebImageManager.h"
+#import "AppDelegate.h"
+
+#define kBaseURLStr @"http://news-at.zhihu.com/api/4/" // 公共路径
+#define kScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kColorRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+#define kHomeTableViewRowHeight 215.0f
+#define kNaviBarHeight 44.f
+
+#ifdef __OBJC__ // PCH文件只有在OC中才有用
+    #ifdef DEBUG
+    #define CFLog(...)  NSLog(__VA_ARGS__) // 调试阶段
+    #else
+    #define CFLog(...)
+    #endif
+#endif
+
+#endif /* Macro_pch */
