@@ -15,7 +15,6 @@ static const CGFloat kNavigationBarHeight = 64.f;
 
 @interface MainViewController () <UIScrollViewDelegate>
 {
-    BOOL isShowMenu; // 是否展示菜单
     CGFloat panMarginX; // 手势滑动在x的偏移量
 }
 
@@ -37,7 +36,6 @@ static const CGFloat kNavigationBarHeight = 64.f;
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    isShowMenu = YES;
     panMarginX = 0.f;
     
     // 背景scrollView
@@ -70,7 +68,7 @@ static const CGFloat kNavigationBarHeight = 64.f;
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(10, 30, 25, 25)];
     [btn setImage:[UIImage imageNamed:@"Home_Icon"] forState:UIControlStateNormal];
     [btn setImage:[UIImage imageNamed:@"Home_Icon_Highlight"] forState:UIControlStateHighlighted];
-    [btn addTarget:self action:@selector(showHomeviewOrMenuView) forControlEvents:UIControlEventTouchUpInside];
+    [btn addTarget:self action:@selector(leftBtnToPullMenuView) forControlEvents:UIControlEventTouchUpInside];
     [_naviBar addSubview:btn];
     
     // 标题栏
@@ -104,18 +102,14 @@ static const CGFloat kNavigationBarHeight = 64.f;
 
 #pragma mark - 切换视图(主页和菜单)
 
-- (void)showHomeviewOrMenuView {
-    if(isShowMenu) {
+- (void)leftBtnToPullMenuView {
+    if(_backgroundView.frame.origin.x != 0) {
         [self showMenuView];
-    } else {
-        [self showHomeView];
     }
 }
 
 - (void)tapToShowHomeView {
-    if(!isShowMenu) {
-        [self showHomeView];
-    }
+    [self showHomeView];
 }
 
 - (void)panToChangeView:(UIPanGestureRecognizer *)recongizer {
@@ -135,27 +129,24 @@ static const CGFloat kNavigationBarHeight = 64.f;
     }
     
     [recongizer setTranslation:CGPointZero inView:self.view];
-    
 }
 
 
 - (void)showHomeView {
-    NSLog(@"推出菜单");
+    CFLog(@"推出菜单");
     
     [UIView animateWithDuration:0.1 animations:^{
         _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(0, 0));
     } completion:^(BOOL finished) {
-        isShowMenu = !isShowMenu;
         [_homeView removeGestureRecognizer:_tapRecognizer]; // 移出手势,否则会出现主页查看不了新闻详情的bug
     }];
 }
 
 - (void)showMenuView {
-    NSLog(@"拉取菜单");
+    CFLog(@"拉取菜单");
     [UIView animateWithDuration:0.1 animations:^{
         _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(kScreenWidth/3.0*2.0, 0));
     } completion:^(BOOL finished) {
-        isShowMenu = !isShowMenu;
         [_homeView addGestureRecognizer:_tapRecognizer]; // 在这里才添加手势个人觉得比一开始更合理
     }];
 }
