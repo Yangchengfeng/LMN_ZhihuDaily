@@ -141,13 +141,18 @@ static const CGFloat kNavigationBarHeight = 64.f;
 
 - (void)showHomeView {
     NSLog(@"推出菜单");
-    _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(0, 0));
-    isShowMenu = !isShowMenu;
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(0, 0));
+    } completion:^(BOOL finished) {
+        isShowMenu = !isShowMenu;
+        [_homeView removeGestureRecognizer:_tapRecognizer]; // 移出手势,否则会出现主页查看不了新闻详情的bug
+    }];
 }
 
 - (void)showMenuView {
     NSLog(@"拉取菜单");
-    [UIView animateWithDuration:0.01 animations:^{
+    [UIView animateWithDuration:0.1 animations:^{
         _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(kScreenWidth/3.0*2.0, 0));
     } completion:^(BOOL finished) {
         isShowMenu = !isShowMenu;
