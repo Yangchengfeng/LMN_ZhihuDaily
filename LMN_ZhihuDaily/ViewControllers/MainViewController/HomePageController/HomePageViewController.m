@@ -10,7 +10,8 @@
 #import "CFHomeStoryModel.h"
 #import "UINavigationBar+CFNavigationBarTool.h"
 
-@interface HomePageViewController () <UIScrollViewDelegate>
+@interface HomePageViewController ()
+
 @end
 
 @implementation HomePageViewController
@@ -21,32 +22,12 @@
     _homeTableView = [[HomeTableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStylePlain];
     [self.view addSubview:_homeTableView];
     self.view.backgroundColor = [UIColor orangeColor];
-    [self configObserve];
     [self loadStories];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadStories];
-}
-
-- (void)configObserve {
-    [self.homeTableView addObserver:self forKeyPath:@"contentOffset" options:NSKeyValueObservingOptionNew context:nil]; // 使用kvo监听
-}
-
-#warning 待修改
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context{
-    
-    if ([object isEqual:self.homeTableView]) {
-        if ([keyPath isEqualToString:@"contentOffset"]) {
-            CGFloat offSetY = self.homeTableView.contentOffset.y;
-        }
-    }
-}
-
-- (void)dealloc {
-    [self.homeTableView removeObserver:self forKeyPath:@"contentOffset"];
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - 获取新闻

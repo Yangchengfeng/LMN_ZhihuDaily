@@ -13,25 +13,61 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Management_Placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="kpf-1c-vUd">
-                        <rect key="frame" x="217" y="12" width="90" height="71"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Management_Placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="kpf-1c-vUd">
+                        <rect key="frame" x="219" y="12" width="90" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="2ru-uR-98p"/>
+                            <constraint firstAttribute="height" constant="71" id="xag-Rh-BYR"/>
+                        </constraints>
                     </imageView>
-                    <view alpha="0.14999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQb-qP-Sv7">
+                    <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQb-qP-Sv7">
                         <rect key="frame" x="11" y="0.0" width="296" height="0.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Qmv-a5-zAK"/>
+                        </constraints>
                     </view>
-                    <view alpha="0.14999999999999999" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FNI-Av-CI8">
-                        <rect key="frame" x="11" y="94.5" width="296" height="0.5"/>
+                    <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FNI-Av-CI8">
+                        <rect key="frame" x="11" y="94" width="298" height="0.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="zVp-or-AYo"/>
+                        </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="不要轻易对狗狗许诺，也许他们听得懂我们的语言" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tqr-R4-UL9">
-                        <rect key="frame" x="11" y="12" width="198" height="71"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" text="不要轻易对狗狗许诺，也许他们听得懂我们的语言" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tqr-R4-UL9">
+                        <rect key="frame" x="11" y="12" width="200" height="71"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="71" id="92d-EG-Tu9"/>
+                        </constraints>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
                     </textView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="kpf-1c-vUd" secondAttribute="trailing" constant="13" id="1JN-Zl-GrM"/>
+                    <constraint firstAttribute="trailing" secondItem="gQb-qP-Sv7" secondAttribute="trailing" constant="13" id="4Za-vm-z9e"/>
+                    <constraint firstItem="Tqr-R4-UL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="5l9-6v-7q4"/>
+                    <constraint firstItem="kpf-1c-vUd" firstAttribute="leading" secondItem="Tqr-R4-UL9" secondAttribute="trailing" constant="8" id="EPE-OI-MPz"/>
+                    <constraint firstItem="FNI-Av-CI8" firstAttribute="top" secondItem="Tqr-R4-UL9" secondAttribute="bottom" constant="11.5" id="YkR-8J-ZS1"/>
+                    <constraint firstItem="Tqr-R4-UL9" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="cKz-Yr-Wrp"/>
+                    <constraint firstItem="FNI-Av-CI8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="eCl-qq-YLq"/>
+                    <constraint firstItem="FNI-Av-CI8" firstAttribute="top" secondItem="kpf-1c-vUd" secondAttribute="bottom" constant="11.5" id="eya-3Z-VQa"/>
+                    <constraint firstItem="gQb-qP-Sv7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="hWH-g2-RJB"/>
+                    <constraint firstAttribute="trailing" secondItem="FNI-Av-CI8" secondAttribute="trailing" constant="11" id="hX5-4k-f1O"/>
+                    <constraint firstAttribute="trailing" secondItem="kpf-1c-vUd" secondAttribute="trailing" constant="11" id="hce-dY-gg3"/>
+                    <constraint firstItem="Tqr-R4-UL9" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="lKz-dO-8Hc"/>
+                    <constraint firstItem="kpf-1c-vUd" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="ojT-WE-yY5"/>
+                    <constraint firstItem="gQb-qP-Sv7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pCh-IS-uzI"/>
+                    <constraint firstItem="FNI-Av-CI8" firstAttribute="top" secondItem="Tqr-R4-UL9" secondAttribute="bottom" constant="11.5" id="sKL-BA-AUW"/>
+                    <constraint firstAttribute="bottom" secondItem="FNI-Av-CI8" secondAttribute="bottom" constant="0.5" id="uMO-v6-p2C"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="1JN-Zl-GrM"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="images" destination="kpf-1c-vUd" id="HMx-fi-Rys"/>
