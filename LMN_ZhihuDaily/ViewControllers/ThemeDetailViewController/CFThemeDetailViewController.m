@@ -32,7 +32,6 @@
 @property (nonatomic, strong) UIButton *changeBtn;
 @property (nonatomic, strong) UINavigationBar *naviBar;
 @property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) CFStoryModel *menuModel;
 
 @end
 
@@ -216,8 +215,8 @@
                 cell.content = [_newsListTableView.dataDict[indexPath.row-1] objectForKey:@"title"];
             } else {
                 cell = [[HomeTableViewCell alloc] init];
-                _menuModel = [CFStoryModel storyWithDict:_newsListTableView.dataDict[indexPath.row-1]];
-                cell.menuStoryModel = _menuModel;
+                CFStoryModel *menuModel = [CFStoryModel storyWithDict:_newsListTableView.dataDict[indexPath.row-1]];
+                cell.menuStoryModel = menuModel;
             }
         }
     }
@@ -235,7 +234,8 @@
         }];
     } else { // 跳转到对应新闻内容
         CFTopNewsViewController *slideStoryVC = [[CFTopNewsViewController alloc] init];
-        [slideStoryVC loadSlideStoryWithID:_menuModel.ID];
+        CFStoryModel *storyModel = [CFStoryModel storyWithDict:_newsListTableView.dataDict[indexPath.row-1]];
+        [slideStoryVC loadSlideStoryWithID:storyModel.ID];
         
         [self presentViewController:slideStoryVC animated:YES completion:^{
         }];
