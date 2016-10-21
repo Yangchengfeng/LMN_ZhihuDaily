@@ -43,7 +43,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    isAdd = NO;
+    isAdd = YES;
     // Do any additional setup after loading the view.
     [self getInfo];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -126,11 +126,11 @@
             [_naviBar addSubview:btn];
             
             // 是否关注按钮
-            _changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+            _changeBtn = [[UIButton alloc] initWithFrame:CGRectMake(kScreenWidth-8-44, 20, 44, 44)];
             [_changeBtn setImage:[UIImage imageNamed:@"Management_Add"] forState:UIControlStateNormal];
             [_changeBtn addTarget:self action:@selector(addOrCancel:) forControlEvents:UIControlEventTouchUpInside];
-            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:_changeBtn];
-
+            [_naviBar addSubview:_changeBtn];
+            
             weakSelf.newsListTableView.dataDict = storiesArr;
             weakSelf.newsListTableView.authorArr = authorArr;
             
@@ -146,12 +146,20 @@
 }
 
 - (void)addOrCancel:(UIButton *)sender {
+    isAdd = !isAdd; // 进行状态取反
     if(isAdd) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"取消关注"                                                                       message:nil
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        [UIView animateWithDuration:0.1 animations:^{
+            [self presentViewController:alert animated:YES completion:nil];
+        } completion:^(BOOL finished) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        // 取消关注后按钮图片也会改变
         [_changeBtn setImage:[UIImage imageNamed:@"Management_Add"] forState:UIControlStateNormal];
     } else {
         [_changeBtn setImage:[UIImage imageNamed:@"Management_Cancel"] forState:UIControlStateNormal];
     }
-    isAdd = !isAdd;
 }
 
 // 返回每行高度
