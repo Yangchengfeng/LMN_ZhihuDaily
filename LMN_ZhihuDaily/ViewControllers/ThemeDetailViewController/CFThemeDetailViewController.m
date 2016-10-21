@@ -18,6 +18,7 @@
 #import "UITableViewCell+CFTableViewCellTool.h"
 #import "UIImage+CFImageTool.h"
 #import "CFThemeDetailViewController.h"
+#import "CFTopNewsViewController.h"
 
 #define kNoPic 3
 
@@ -31,6 +32,7 @@
 @property (nonatomic, strong) UIButton *changeBtn;
 @property (nonatomic, strong) UINavigationBar *naviBar;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) CFStoryModel *menuModel;
 
 @end
 
@@ -214,8 +216,8 @@
                 cell.content = [_newsListTableView.dataDict[indexPath.row-1] objectForKey:@"title"];
             } else {
                 cell = [[HomeTableViewCell alloc] init];
-                CFStoryModel *menuModel = [CFStoryModel storyWithDict:_newsListTableView.dataDict[indexPath.row-1]];
-                cell.menuStoryModel = menuModel;
+                _menuModel = [CFStoryModel storyWithDict:_newsListTableView.dataDict[indexPath.row-1]];
+                cell.menuStoryModel = _menuModel;
             }
         }
     }
@@ -225,11 +227,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSLog(@"点击行数%lu", indexPath.row);
-    if(indexPath.row == 0) {
+    if(indexPath.row == 0) { // 跳转到主编首页
         CFEditorsListTableViewController *editorsListVC = [[CFEditorsListTableViewController alloc] initWithStyle:UITableViewStylePlain];
         editorsListVC.editors = _newsListTableView.authorArr;
         editorsListVC.themeID = _themeID;
         [self presentViewController:editorsListVC animated:YES completion:^{
+        }];
+    } else { // 跳转到对应新闻内容
+        CFTopNewsViewController *slideStoryVC = [[CFTopNewsViewController alloc] init];
+        [slideStoryVC loadSlideStoryWithID:_menuModel.ID];
+        
+        [self presentViewController:slideStoryVC animated:YES completion:^{
         }];
     }
 }

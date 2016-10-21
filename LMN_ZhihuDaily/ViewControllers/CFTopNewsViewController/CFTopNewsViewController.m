@@ -309,6 +309,38 @@
 
 }
 
+- (void)loadSlideStoryWithID:(NSString *)ID {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    NSString *urlStr = [NSString stringWithFormat:@"story/%@", ID];
+    NSURL *url = [NSURL URLWithString:kBaseURLStr];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    [manager GET:urlStr parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        _topNewsDetailModel = [CFTopNewsDetailModel topNewsDetailModelWithDict:dict];
+        
+        [weakSelf reloadView];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
+    NSString *extraStr = [NSString stringWithFormat:@"story-extra/%@", ID];
+    AFHTTPSessionManager *extroManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url];
+    [extroManager GET:extraStr parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        _footModel = [CFFootModel footModelWithDict:dict];
+        NSLog(@"%@", _footModel.popularity);
+        [weakSelf reloadFootView];
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView { // 设置下拉位移
     CGFloat offSetY = scrollView.contentOffset.y;
     if (offSetY < 0.f) {

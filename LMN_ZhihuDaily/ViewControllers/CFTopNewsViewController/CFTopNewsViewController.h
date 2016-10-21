@@ -11,5 +11,6 @@
 @interface CFTopNewsViewController : UIViewController
 
 - (void)loadTopNewsWithID:(NSString *)ID;
+- (void)loadSlideStoryWithID:(NSString *)ID;
 
 @end
