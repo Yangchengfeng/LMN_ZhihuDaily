@@ -88,8 +88,6 @@
         id themes = responseObject[@"others"];
         sumOfThemes = [themes count]; // 获取新闻类型数
         
-        NSLog(@"%@", themes);
-        
         if([themes isKindOfClass:[NSArray class]]) {
             
             NSArray *newsThemes = (NSArray *)themes;
@@ -121,7 +119,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return sumOfThemes;
+    return sumOfThemes+1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
