@@ -132,8 +132,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     NSDictionary *dict = _editors[indexPath.row];
-    NSString *url = [dict objectForKey:@"url"];
-    NSLog(@"%@", url);
+    NSString *editorID = [dict objectForKey:@"id"];
+    NSString *url = [NSString stringWithFormat:@"http://news-at.zhihu.com/api/4/editor/%@/profile-page/ios", editorID];
     NSURL *editorUrl = [NSURL URLWithString:url];
     NSURLRequest *request = [NSURLRequest requestWithURL:editorUrl];
     
