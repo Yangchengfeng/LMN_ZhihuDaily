@@ -133,8 +133,6 @@ static const CGFloat kNavigationBarHeight = 64.f;
 
 
 - (void)showHomeView {
-    CFLog(@"推出菜单");
-    
     [UIView animateWithDuration:0.1 animations:^{
         _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(0, 0));
     } completion:^(BOOL finished) {
@@ -143,7 +141,6 @@ static const CGFloat kNavigationBarHeight = 64.f;
 }
 
 - (void)showMenuView {
-    CFLog(@"拉取菜单");
     [UIView animateWithDuration:0.1 animations:^{
         _backgroundView.transform = CGAffineTransformConcat(CGAffineTransformMakeScale(1.0, 1.0), CGAffineTransformMakeTranslation(kScreenWidth/3.0*2.0, 0));
     } completion:^(BOOL finished) {

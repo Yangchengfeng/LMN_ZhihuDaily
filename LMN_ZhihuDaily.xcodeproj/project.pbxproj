@@ -132,6 +132,8 @@
 		380138BA1D92833B0096B1A3 /* CFLogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFLogoutViewController.m; sourceTree = "<group>"; };
 		380138BD1D9283CF0096B1A3 /* CFBaseLogInOrOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFBaseLogInOrOutViewController.h; sourceTree = "<group>"; };
 		380138BE1D9283CF0096B1A3 /* CFBaseLogInOrOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFBaseLogInOrOutViewController.m; sourceTree = "<group>"; };
+		381821FC1EB79CF10014FBE9 /* CFURLConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFURLConfig.h; sourceTree = "<group>"; };
+		381821FD1EB79DA30014FBE9 /* CFParameterConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFParameterConfig.h; sourceTree = "<group>"; };
 		381899581D838F980050FED7 /* LaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
 		381899591D838F980050FED7 /* LaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchView.m; sourceTree = "<group>"; };
 		3830CBFB1D9635F500F24A1C /* CFSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSettingsCell.h; sourceTree = "<group>"; };
@@ -678,6 +680,8 @@
 				385820C41D81D0C500045084 /* AppDelegate.h */,
 				385820C51D81D0C500045084 /* AppDelegate.m */,
 				385820C61D81D0C500045084 /* main.m */,
+				381821FC1EB79CF10014FBE9 /* CFURLConfig.h */,
+				381821FD1EB79DA30014FBE9 /* CFParameterConfig.h */,
 			);
 			path = Other;
 			sourceTree = "<group>";
