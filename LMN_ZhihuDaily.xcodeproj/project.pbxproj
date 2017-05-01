@@ -10,6 +10,7 @@
 		380138B31D9273460096B1A3 /* UIImage+CFImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 380138B21D9273460096B1A3 /* UIImage+CFImageTool.m */; };
 		380138BB1D92833B0096B1A3 /* CFLogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380138BA1D92833B0096B1A3 /* CFLogoutViewController.m */; };
 		380138BF1D9283CF0096B1A3 /* CFBaseLogInOrOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 380138BE1D9283CF0096B1A3 /* CFBaseLogInOrOutViewController.m */; };
+		381822041EB7A0FF0014FBE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 381822031EB7A0FF0014FBE9 /* Assets.xcassets */; };
 		3818995A1D838F980050FED7 /* LaunchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 381899591D838F980050FED7 /* LaunchView.m */; };
 		3830CBFD1D9635F500F24A1C /* CFSettingsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830CBFC1D9635F500F24A1C /* CFSettingsCell.m */; };
 		3830CC011D965A3800F24A1C /* CFSettingsGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 3830CC001D965A3800F24A1C /* CFSettingsGroup.m */; };
@@ -30,7 +31,6 @@
 		3850322F1D90ECD700E4EB9E /* CFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3850322D1D90ECD700E4EB9E /* CFLoginViewController.m */; };
 		385032301D90ECD700E4EB9E /* CFLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3850322E1D90ECD700E4EB9E /* CFLoginViewController.xib */; };
 		385032331D91326900E4EB9E /* READ in Resources */ = {isa = PBXBuildFile; fileRef = 385032321D91326900E4EB9E /* READ */; };
-		385820B21D81CEBC00045084 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385820B11D81CEBC00045084 /* Assets.xcassets */; };
 		385820B51D81CEBC00045084 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 385820B31D81CEBC00045084 /* LaunchScreen.storyboard */; };
 		385820C71D81D0C500045084 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 385820C51D81D0C500045084 /* AppDelegate.m */; };
 		385820C81D81D0C500045084 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 385820C61D81D0C500045084 /* main.m */; };
@@ -135,6 +135,7 @@
 		381821FF1EB79F8B0014FBE9 /* CFParameterConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFParameterConfig.h; sourceTree = "<group>"; };
 		381822001EB79F8B0014FBE9 /* CFURLConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFURLConfig.h; sourceTree = "<group>"; };
 		381822011EB79F8B0014FBE9 /* Macro.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Macro.pch; sourceTree = "<group>"; };
+		381822031EB7A0FF0014FBE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		381899581D838F980050FED7 /* LaunchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchView.h; sourceTree = "<group>"; };
 		381899591D838F980050FED7 /* LaunchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchView.m; sourceTree = "<group>"; };
 		3830CBFB1D9635F500F24A1C /* CFSettingsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFSettingsCell.h; sourceTree = "<group>"; };
@@ -172,7 +173,6 @@
 		3850322E1D90ECD700E4EB9E /* CFLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CFLoginViewController.xib; sourceTree = "<group>"; };
 		385032321D91326900E4EB9E /* READ */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = READ; sourceTree = "<group>"; };
 		385820A21D81CEBB00045084 /* LMN_ZhihuDaily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LMN_ZhihuDaily.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		385820B11D81CEBC00045084 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		385820B41D81CEBC00045084 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		385820B61D81CEBC00045084 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385820C41D81D0C500045084 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -422,6 +422,14 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		381822021EB7A0FF0014FBE9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				381822031EB7A0FF0014FBE9 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		3830CBFE1D965A1900F24A1C /* CFSettingsGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +619,7 @@
 		385820A41D81CEBB00045084 /* LMN_ZhihuDaily */ = {
 			isa = PBXGroup;
 			children = (
+				381822021EB7A0FF0014FBE9 /* Resource */,
 				381821FE1EB79F8B0014FBE9 /* Macro */,
 				389013EC1D82AA1A007C2EAB /* Request */,
 				385820C91D81D12100045084 /* ViewControllers */,
@@ -618,7 +627,6 @@
 				385820BF1D81D06A00045084 /* Views */,
 				385820BE1D81D04B00045084 /* Utility */,
 				385820BD1D81D03F00045084 /* Lib */,
-				385820B11D81CEBC00045084 /* Assets.xcassets */,
 				385820C31D81D0C500045084 /* Other */,
 				385820A51D81CEBB00045084 /* Supporting Files */,
 			);
@@ -1156,6 +1164,7 @@
 			files = (
 				38F2263F1D917D5300AC3762 /* UMSCommentInputControlleriPad.xib in Resources */,
 				38F226591D918D6500AC3762 /* WeiboSDK.bundle in Resources */,
+				381822041EB7A0FF0014FBE9 /* Assets.xcassets in Resources */,
 				38F226431D917D5300AC3762 /* UMSnsAccountViewController.xib in Resources */,
 				385032331D91326900E4EB9E /* READ in Resources */,
 				385032301D90ECD700E4EB9E /* CFLoginViewController.xib in Resources */,
@@ -1174,7 +1183,6 @@
 				38EEACE41D88431800CF66A0 /* HomeTableViewCell.xib in Resources */,
 				38F226401D917D5300AC3762 /* UMShareEditViewController.xib in Resources */,
 				3833D9031D97765E00C81DB7 /* CFNewNoPicCell.xib in Resources */,
-				385820B21D81CEBC00045084 /* Assets.xcassets in Resources */,
 				38F226421D917D5300AC3762 /* UMSLoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
