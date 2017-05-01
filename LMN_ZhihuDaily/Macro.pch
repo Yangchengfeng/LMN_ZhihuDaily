@@ -17,6 +17,7 @@
 #import "SDWebImageManager.h"
 #import "AppDelegate.h"
 
+#define kLanuchVCURLStr @"http://news-at.zhihu.com/api/7/" // 2.6.9版本更新接口
 #define kBaseURLStr @"http://news-at.zhihu.com/api/4/" // 公共路径
 #define kScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height

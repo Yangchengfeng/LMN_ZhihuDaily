@@ -15,7 +15,6 @@
 @property (nonatomic, strong) UIImageView *defaultView;
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, strong) UIImageView *imgView;
-@property (nonatomic, strong) UILabel *textLabel;
 @property (nonatomic, strong) LaunchView *bottomView;
 
 @end
@@ -77,19 +76,6 @@
     }];
     
     /**/
-    _textLabel = [[UILabel alloc] init];
-    _textLabel.text = @"linmeini perfect";
-    _textLabel.textColor = [UIColor whiteColor];
-    _textLabel.textAlignment = NSTextAlignmentCenter;
-    _textLabel.font = [UIFont systemFontOfSize:10];
-    [_imgView addSubview:_textLabel];
-    [_textLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.view.mas_left).offset(0);
-        make.right.equalTo(self.view.mas_right).offset(0);
-        make.bottom.equalTo(_imgView.mas_bottom).offset(-8);
-    }];
-    
-    /**/
      _bottomView = [[LaunchView alloc] initWithFrame:CGRectMake(0, kScreenHeight*0.85, kScreenWidth, kScreenHeight*0.15)];
     _bottomView.alpha = 0.0f;
     [_containerView addSubview:_bottomView];
@@ -103,21 +89,24 @@
 
 - (void)changeLaunchView {
     [UIView animateWithDuration:2.5 delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        NSURL *baseURL = [NSURL URLWithString:kBaseURLStr];
+        NSURL *baseURL = [NSURL URLWithString:kLanuchVCURLStr];
         AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:baseURL];
         
         CGFloat screenScale = [UIScreen mainScreen].scale; // Retina与非Retina分辨率不同，需要的图片尺寸不一样,当然我这里不作为整屏幕，影响不大
-        NSString *getStr = [NSString stringWithFormat:@"start-image/%ld*%ld", [@(kScreenWidth) integerValue]*(int)screenScale , [@(kScreenHeight) integerValue]*(int)screenScale];
+        NSString *getStr = [NSString stringWithFormat:@"prefetch-launch-images/%ld*%ld", [@(kScreenWidth) integerValue]*(int)screenScale , [@(kScreenHeight) integerValue]*(int)screenScale];
         
         [manager GET:getStr parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-            _textLabel.text = [NSString stringWithFormat:@"%@", responseObject[@"text"]];
-            NSURL *picURL = [NSURL URLWithString:responseObject[@"img"]];
-            [[SDWebImageManager sharedManager] downloadImageWithURL:picURL options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                // 下载进度block
-            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                // 下载完成block
-                [_imgView setImage:image];
-            }];
+            NSArray *creatives = responseObject[@"creatives"];
+            if(creatives.count > 0) {
+                NSDictionary *object = creatives.firstObject;
+                NSURL *picURL = [NSURL URLWithString:object[@"url"]];
+                [[SDWebImageManager sharedManager] downloadImageWithURL:picURL options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                    // 下载进度block
+                } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                    // 下载完成block
+                    [_imgView setImage:image];
+                }];
+            }
         } failure:^(NSURLSessionDataTask *task, NSError *error) {
             NSLog(@"%@", error);
         }];
@@ -125,15 +114,8 @@
         _containerView.alpha = 1.0f;
         _bottomView.alpha = 1.0f;
     } completion:^(BOOL finished) {
-//        MainViewController *mainVC = [[MainViewController alloc] init];
-//        self.view.window.rootViewController = mainVC;
         self.view.window.rootViewController = ((AppDelegate *)[UIApplication sharedApplication].delegate).mainViewController;
     }];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
