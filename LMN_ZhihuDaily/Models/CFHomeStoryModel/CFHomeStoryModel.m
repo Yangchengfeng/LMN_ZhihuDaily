@@ -18,12 +18,16 @@
         self.ga_prefix = dict[@"ga_prefix"];
         self.title = dict[@"title"];
         self.image = dict[@"image"];
+        self.multipic = dict[@"multipic"];
     }
     return self;
 }
 
 + (instancetype)homeStoryWithDict:(NSDictionary *)dict {
     return [[self alloc] initWithDict:dict];
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
 }
 
 @end

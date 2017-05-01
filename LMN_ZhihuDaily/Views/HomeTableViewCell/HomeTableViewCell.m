@@ -8,6 +8,12 @@
 
 #import "HomeTableViewCell.h"
 
+@interface HomeTableViewCell ()
+
+@property (weak, nonatomic) IBOutlet UIButton *multiPicBtn;
+
+@end
+
 @implementation HomeTableViewCell
 
 - (instancetype)init {
@@ -24,6 +30,9 @@
         [_images setImage:[UIImage imageNamed:@"Management_Placeholder"]];
     } else {
         _title.text = storyModel.title;
+        if(!storyModel.multipic) {
+            self.multiPicBtn.hidden = YES;
+        }
         [[SDWebImageManager sharedManager] downloadImageWithURL:storyModel.images[0] options:0 progress:^(NSInteger receivedSize, NSInteger expectedSize) {
             // 下载进度block
         } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {

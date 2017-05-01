@@ -13,24 +13,24 @@
 /**
  * "stories": 
  {
- "images": [
- "http://pic2.zhimg.com/bb932e98de3bd1fbe4bf74a5e86c52cd.jpg"
- ],
- "type": 0,
- "id": 8788676,
- "ga_prefix": "091317",
- "title": "知乎好问题 · 国内有哪些冷门但有特色的旅游地点？"
- },
- */
-
-/*"top_stories":
- {
- "image": "http://pic2.zhimg.com/34afc742188aaa7707a016ffc35cdc9d.jpg",
- "type": 0,
- "id": 8802910,
- "ga_prefix": "091817",
- "title": "知乎好问题 · 有哪些好吃又健康而且适合在家做的甜品？"
- },
+     "images": [
+     "https://pic4.zhimg.com/v2-48ee364f2e2d28909c9047d0a876b0fb.jpg"
+     ],
+     "type": 0,
+     "id": 9393224,
+     "ga_prefix": "050122",
+     "title": "小事 · 旅途愉快"
+     },
+     {
+     "title": "为什么陈凯歌再没拍出这样好的电影来？",
+     "ga_prefix": "050121",
+     "images": [
+     "https://pic3.zhimg.com/v2-9cbb836d62367b202637c4e9320fc14a.jpg"
+     ],
+     "multipic": true,
+     "type": 0,
+     "id": 9393089
+    },
  */
 
 @property (nonatomic, strong) NSArray *images;
@@ -39,6 +39,7 @@
 @property (nonatomic, strong) NSString *ga_prefix;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSURL *image;
+@property (nonatomic, assign) BOOL multipic;
 
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)homeStoryWithDict:(NSDictionary *)dict;

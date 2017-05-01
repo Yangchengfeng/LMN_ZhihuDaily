@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,13 +14,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Management_Placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="kpf-1c-vUd">
-                        <rect key="frame" x="219" y="12" width="90" height="71"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="90" id="2ru-uR-98p"/>
-                            <constraint firstAttribute="height" constant="71" id="xag-Rh-BYR"/>
-                        </constraints>
-                    </imageView>
                     <view alpha="0.14999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gQb-qP-Sv7">
                         <rect key="frame" x="11" y="0.0" width="296" height="0.5"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,12 +38,29 @@
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" secureTextEntry="YES"/>
                     </textView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Management_Placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="kpf-1c-vUd">
+                        <rect key="frame" x="219" y="12" width="90" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="2ru-uR-98p"/>
+                            <constraint firstAttribute="height" constant="71" id="xag-Rh-BYR"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyy-SR-J37">
+                        <rect key="frame" x="286.5" y="72" width="22.5" height="10.5"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="9"/>
+                        <state key="normal" title="多图">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="fyy-SR-J37" firstAttribute="width" secondItem="kpf-1c-vUd" secondAttribute="width" multiplier="0.25" id="0wo-bi-ZVS"/>
                     <constraint firstAttribute="trailing" secondItem="kpf-1c-vUd" secondAttribute="trailing" constant="13" id="1JN-Zl-GrM"/>
                     <constraint firstAttribute="trailing" secondItem="gQb-qP-Sv7" secondAttribute="trailing" constant="13" id="4Za-vm-z9e"/>
                     <constraint firstItem="Tqr-R4-UL9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="5l9-6v-7q4"/>
                     <constraint firstItem="kpf-1c-vUd" firstAttribute="leading" secondItem="Tqr-R4-UL9" secondAttribute="trailing" constant="8" id="EPE-OI-MPz"/>
+                    <constraint firstItem="fyy-SR-J37" firstAttribute="height" secondItem="kpf-1c-vUd" secondAttribute="height" multiplier="0.15" id="GnU-eU-RHQ"/>
                     <constraint firstItem="FNI-Av-CI8" firstAttribute="top" secondItem="Tqr-R4-UL9" secondAttribute="bottom" constant="11.5" id="YkR-8J-ZS1"/>
                     <constraint firstItem="Tqr-R4-UL9" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="cKz-Yr-Wrp"/>
                     <constraint firstItem="FNI-Av-CI8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="eCl-qq-YLq"/>
@@ -57,7 +68,9 @@
                     <constraint firstItem="gQb-qP-Sv7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="11" id="hWH-g2-RJB"/>
                     <constraint firstAttribute="trailing" secondItem="FNI-Av-CI8" secondAttribute="trailing" constant="11" id="hX5-4k-f1O"/>
                     <constraint firstAttribute="trailing" secondItem="kpf-1c-vUd" secondAttribute="trailing" constant="11" id="hce-dY-gg3"/>
+                    <constraint firstItem="fyy-SR-J37" firstAttribute="trailing" secondItem="kpf-1c-vUd" secondAttribute="trailing" id="kfl-i9-dIx"/>
                     <constraint firstItem="Tqr-R4-UL9" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="lKz-dO-8Hc"/>
+                    <constraint firstItem="fyy-SR-J37" firstAttribute="bottom" secondItem="kpf-1c-vUd" secondAttribute="bottom" id="obX-qc-kvF"/>
                     <constraint firstItem="kpf-1c-vUd" firstAttribute="top" secondItem="gQb-qP-Sv7" secondAttribute="bottom" constant="11.5" id="ojT-WE-yY5"/>
                     <constraint firstItem="gQb-qP-Sv7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pCh-IS-uzI"/>
                     <constraint firstItem="FNI-Av-CI8" firstAttribute="top" secondItem="Tqr-R4-UL9" secondAttribute="bottom" constant="11.5" id="sKL-BA-AUW"/>
@@ -71,6 +84,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="images" destination="kpf-1c-vUd" id="HMx-fi-Rys"/>
+                <outlet property="multiPicBtn" destination="fyy-SR-J37" id="qEx-Yc-ngM"/>
                 <outlet property="title" destination="Tqr-R4-UL9" id="Sl8-Sc-ZrF"/>
             </connections>
             <point key="canvasLocation" x="235" y="260.5"/>
