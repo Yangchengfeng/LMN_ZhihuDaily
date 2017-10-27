@@ -109,6 +109,9 @@
 		38F64FD81DA0CC8200571834 /* CFTopNewsDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F64FD71DA0CC8200571834 /* CFTopNewsDetailModel.m */; };
 		38F8CFB61D857C6100BC81E2 /* SlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F8CFB41D857C6100BC81E2 /* SlideMenuViewController.m */; };
 		38F8CFB71D857C6100BC81E2 /* SlideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38F8CFB51D857C6100BC81E2 /* SlideMenuViewController.xib */; };
+		6BF51DD41FA2F33C00E3C3F1 /* UMSocialNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF51DBE1FA2DE1800E3C3F1 /* UMSocialNetwork.framework */; };
+		6BF51DD51FA2F34000E3C3F1 /* UMSocialCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF51DC01FA2DE1800E3C3F1 /* UMSocialCore.framework */; };
+		6BF51DD61FA2F34300E3C3F1 /* UMSocialSDKPromptResources.bundle in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BF51DBF1FA2DE1800E3C3F1 /* UMSocialSDKPromptResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -301,6 +304,22 @@
 		38F8CFB41D857C6100BC81E2 /* SlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideMenuViewController.m; sourceTree = "<group>"; };
 		38F8CFB51D857C6100BC81E2 /* SlideMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideMenuViewController.xib; sourceTree = "<group>"; };
 		38FA64361D86E16F007DE43A /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		6BF51DBB1FA2DE1800E3C3F1 /* UMSocialSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKResources.bundle; sourceTree = "<group>"; };
+		6BF51DBC1FA2DE1800E3C3F1 /* UShareUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UShareUI.framework; sourceTree = "<group>"; };
+		6BF51DBE1FA2DE1800E3C3F1 /* UMSocialNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialNetwork.framework; sourceTree = "<group>"; };
+		6BF51DBF1FA2DE1800E3C3F1 /* UMSocialSDKPromptResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = UMSocialSDKPromptResources.bundle; sourceTree = "<group>"; };
+		6BF51DC01FA2DE1800E3C3F1 /* UMSocialCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UMSocialCore.framework; sourceTree = "<group>"; };
+		6BF51DC31FA2DE1800E3C3F1 /* libSocialSMS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSMS.a; sourceTree = "<group>"; };
+		6BF51DC41FA2DE1800E3C3F1 /* UMSocialSmsHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialSmsHandler.h; sourceTree = "<group>"; };
+		6BF51DC61FA2DE1800E3C3F1 /* UMSocialUniqueIdHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialUniqueIdHandler.h; sourceTree = "<group>"; };
+		6BF51DC71FA2DE1800E3C3F1 /* libSocialUniqueId.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialUniqueId.a; sourceTree = "<group>"; };
+		6BF51DC91FA2DE1800E3C3F1 /* libSocialWeChat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialWeChat.a; sourceTree = "<group>"; };
+		6BF51DCA1FA2DE1800E3C3F1 /* UMSocialWechatHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialWechatHandler.h; sourceTree = "<group>"; };
+		6BF51DCC1FA2DE1800E3C3F1 /* libSocialSina.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialSina.a; sourceTree = "<group>"; };
+		6BF51DCD1FA2DE1800E3C3F1 /* UMSocialSinaHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialSinaHandler.h; sourceTree = "<group>"; };
+		6BF51DCF1FA2DE1800E3C3F1 /* UMSocialQQHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UMSocialQQHandler.h; sourceTree = "<group>"; };
+		6BF51DD01FA2DE1800E3C3F1 /* libSocialQQ.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSocialQQ.a; sourceTree = "<group>"; };
+		6BF51DD21FA2DE1800E3C3F1 /* libUMSocialLog.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMSocialLog.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +327,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BF51DD61FA2F34300E3C3F1 /* UMSocialSDKPromptResources.bundle in Frameworks */,
+				6BF51DD51FA2F34000E3C3F1 /* UMSocialCore.framework in Frameworks */,
+				6BF51DD41FA2F33C00E3C3F1 /* UMSocialNetwork.framework in Frameworks */,
 				3894025F1DA7E55C0090D0C1 /* ImageIO.framework in Frameworks */,
 				38F226651D91927B00AC3762 /* CoreTelephony.framework in Frameworks */,
 				38F2265B1D91922900AC3762 /* SystemConfiguration.framework in Frameworks */,
@@ -505,6 +527,7 @@
 		385032311D9131CB00E4EB9E /* CFSocialSDK */ = {
 			isa = PBXGroup;
 			children = (
+				6BF51DB91FA2DE1800E3C3F1 /* UMSocial */,
 				38EE1E5D1D92CAE700A3751F /* SMS_SDK */,
 				385032321D91326900E4EB9E /* READ */,
 			);
@@ -528,6 +551,7 @@
 				38F2265A1D91922900AC3762 /* SystemConfiguration.framework */,
 				385820A41D81CEBB00045084 /* LMN_ZhihuDaily */,
 				385820A31D81CEBB00045084 /* Products */,
+				6BF51DD31FA2F33C00E3C3F1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -951,6 +975,108 @@
 			path = CFTopNewsDetailModel;
 			sourceTree = "<group>";
 		};
+		6BF51DB91FA2DE1800E3C3F1 /* UMSocial */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DBA1FA2DE1800E3C3F1 /* UMSocialUI */,
+				6BF51DBD1FA2DE1800E3C3F1 /* UMSocialSDK */,
+				6BF51DC11FA2DE1800E3C3F1 /* SocialLibraries */,
+				6BF51DD11FA2DE1800E3C3F1 /* UMSocialSDKPlugin */,
+			);
+			path = UMSocial;
+			sourceTree = "<group>";
+		};
+		6BF51DBA1FA2DE1800E3C3F1 /* UMSocialUI */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DBB1FA2DE1800E3C3F1 /* UMSocialSDKResources.bundle */,
+				6BF51DBC1FA2DE1800E3C3F1 /* UShareUI.framework */,
+			);
+			path = UMSocialUI;
+			sourceTree = "<group>";
+		};
+		6BF51DBD1FA2DE1800E3C3F1 /* UMSocialSDK */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DBE1FA2DE1800E3C3F1 /* UMSocialNetwork.framework */,
+				6BF51DBF1FA2DE1800E3C3F1 /* UMSocialSDKPromptResources.bundle */,
+				6BF51DC01FA2DE1800E3C3F1 /* UMSocialCore.framework */,
+			);
+			path = UMSocialSDK;
+			sourceTree = "<group>";
+		};
+		6BF51DC11FA2DE1800E3C3F1 /* SocialLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DC21FA2DE1800E3C3F1 /* SMS */,
+				6BF51DC51FA2DE1800E3C3F1 /* UniqueId */,
+				6BF51DC81FA2DE1800E3C3F1 /* WeChat */,
+				6BF51DCB1FA2DE1800E3C3F1 /* Sina */,
+				6BF51DCE1FA2DE1800E3C3F1 /* QQ */,
+			);
+			path = SocialLibraries;
+			sourceTree = "<group>";
+		};
+		6BF51DC21FA2DE1800E3C3F1 /* SMS */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DC31FA2DE1800E3C3F1 /* libSocialSMS.a */,
+				6BF51DC41FA2DE1800E3C3F1 /* UMSocialSmsHandler.h */,
+			);
+			path = SMS;
+			sourceTree = "<group>";
+		};
+		6BF51DC51FA2DE1800E3C3F1 /* UniqueId */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DC61FA2DE1800E3C3F1 /* UMSocialUniqueIdHandler.h */,
+				6BF51DC71FA2DE1800E3C3F1 /* libSocialUniqueId.a */,
+			);
+			path = UniqueId;
+			sourceTree = "<group>";
+		};
+		6BF51DC81FA2DE1800E3C3F1 /* WeChat */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DC91FA2DE1800E3C3F1 /* libSocialWeChat.a */,
+				6BF51DCA1FA2DE1800E3C3F1 /* UMSocialWechatHandler.h */,
+			);
+			path = WeChat;
+			sourceTree = "<group>";
+		};
+		6BF51DCB1FA2DE1800E3C3F1 /* Sina */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DCC1FA2DE1800E3C3F1 /* libSocialSina.a */,
+				6BF51DCD1FA2DE1800E3C3F1 /* UMSocialSinaHandler.h */,
+			);
+			path = Sina;
+			sourceTree = "<group>";
+		};
+		6BF51DCE1FA2DE1800E3C3F1 /* QQ */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DCF1FA2DE1800E3C3F1 /* UMSocialQQHandler.h */,
+				6BF51DD01FA2DE1800E3C3F1 /* libSocialQQ.a */,
+			);
+			path = QQ;
+			sourceTree = "<group>";
+		};
+		6BF51DD11FA2DE1800E3C3F1 /* UMSocialSDKPlugin */ = {
+			isa = PBXGroup;
+			children = (
+				6BF51DD21FA2DE1800E3C3F1 /* libUMSocialLog.a */,
+			);
+			path = UMSocialSDKPlugin;
+			sourceTree = "<group>";
+		};
+		6BF51DD31FA2F33C00E3C3F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1220,8 +1346,10 @@
 					"$(PROJECT_DIR)/LMN_ZhihuDaily",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/SMS_SDK",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/SMSSDK_2.0.6_Demo/SMS_SDK",
-					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/umeng_ios_social_sdk_6.0.0_arm64_custom/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/SocialLibraries",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LMN_ZhihuDaily/Macro.pch;
@@ -1265,8 +1393,10 @@
 					"$(PROJECT_DIR)/LMN_ZhihuDaily",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/SMS_SDK",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/SMSSDK_2.0.6_Demo/SMS_SDK",
-					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/umeng_ios_social_sdk_6.0.0_arm64_custom/UMSocial/UMSocialSDK",
 					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialSDK",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialSDKPlugin",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/UMSocialUI",
+					"$(PROJECT_DIR)/LMN_ZhihuDaily/Lib/CFSocialSDK/UMSocial/SocialLibraries",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = LMN_ZhihuDaily/Macro.pch;

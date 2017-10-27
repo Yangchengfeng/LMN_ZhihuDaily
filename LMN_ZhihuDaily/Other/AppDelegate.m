@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "LaunchViewController.h"
 // 第三方登录
-#import "UMSocial.h"
-#import "UMSocialSinaSSOHandler.h"
+#import <UMSocialCore/UMSocialCore.h>
 #import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
@@ -31,13 +30,14 @@
         [self mainViewController];
     });
     
-    // 设置友盟
-    [UMSocialData setAppKey:@"57e0ff8de0f55a9140000b88"];
-    [UMSocialData openLog:YES]; // 用下面的代码打开我们SDK在控制台的输出后能看到相应的错误码
+    /* 设置友盟appkey */
+    [[UMSocialManager defaultManager] setUmSocialAppkey:kUMAppKey];
     
-    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"3092948631"
-                                              secret:@"5065ef0f93e78dbfb364272a7d3f27b9"
-                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [self configUSharePlatforms];
+    [self confitUShareSettings];
+
+    /* 打开调试日志 */
+    [[UMSocialManager defaultManager] openLog:YES];
     
     // MOB
     [SMSSDK registerApp:@"1753f9c58ac8c"
@@ -45,15 +45,57 @@
     return YES;
 }
 
+- (void)confitUShareSettings
+{
+    /*
+     * 打开图片水印
+     */
+    //[UMSocialGlobal shareInstance].isUsingWaterMark = YES;
+    
+    /*
+     * 关闭强制验证https，可允许http图片分享，但需要在info.plist设置安全域名
+     <key>NSAppTransportSecurity</key>
+     <dict>
+     <key>NSAllowsArbitraryLoads</key>
+     <true/>
+     </dict>
+     */
+    //[UMSocialGlobal shareInstance].isUsingHttpsWhenShareContent = NO;
+    
+}
+
+- (void)configUSharePlatforms
+{
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:kSinaAppKey  appSecret:kSinaSecret redirectURL:kRedirectURL];
+}
+
 #pragma mark - 回调方法
 
 // 注明：下面两种方法如果缺一个的话，当点击关闭按钮就会崩
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary*)options{
-    return  [UMSocialSnsService handleOpenURL:url];
+    BOOL result = [[UMSocialManager defaultManager]  handleOpenURL:url options:options];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
 }
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-    return  [UMSocialSnsService handleOpenURL:url];
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
+}
+
+// 所有系统支持
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url];
+    if (!result) {
+        // 其他如支付等SDK的回调
+    }
+    return result;
 }
 
 #pragma mark - 初始化主界面控制器

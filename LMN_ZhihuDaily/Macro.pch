@@ -26,6 +26,15 @@
 #define kHomeTableViewRowHeight 215.0f
 #define kNaviBarHeight 44.f
 
+// 设置友盟
+#define kUMAppKey @"57e0ff8de0f55a9140000b88"
+#define kSinaAppKey @"3092948631"
+#define kSinaSecret @"5065ef0f93e78dbfb364272a7d3f27b9"
+#define kRedirectURL @"http://sns.whalecloud.com/sina2/callback"
+// MOB
+#define  kSMSAppKey @"1753f9c58ac8c"
+#define  kSMSAppSecret @"fdd2bd1d27324b134aa9a58360282d48"
+
 #ifdef __OBJC__ // PCH文件只有在OC中才有用
     #ifdef DEBUG
     #define CFLog(...)  NSLog(__VA_ARGS__) // 调试阶段
