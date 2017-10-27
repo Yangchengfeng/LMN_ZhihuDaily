@@ -14,6 +14,8 @@
 #import "MainViewController.h"
 #import "CFThemeDetailViewController.h"
 
+static BOOL isDark = NO;
+
 @interface SlideMenuViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     NSInteger sumOfThemes;
@@ -180,4 +182,20 @@
     }
 }
 
+- (IBAction)changeStatusOfdayAndNight:(UIButton *)sender {
+    if(!isDark) {
+        [sender setImage:[UIImage imageNamed:@"Menu_Day"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"Menu_Day"] forState:UIControlStateHighlighted];
+        
+        [sender setTitle:@"白天模式" forState:UIControlStateNormal];
+        [sender setTitle:@"白天模式" forState:UIControlStateHighlighted];
+    } else {
+        [sender setImage:[UIImage imageNamed:@"Menu_Dark"] forState:UIControlStateNormal];
+        [sender setImage:[UIImage imageNamed:@"Menu_Dark"] forState:UIControlStateHighlighted];
+        
+        [sender setTitle:@"夜间模式" forState:UIControlStateNormal];
+        [sender setTitle:@"夜间模式" forState:UIControlStateHighlighted];
+    }
+    isDark = !isDark;
+}
 @end
