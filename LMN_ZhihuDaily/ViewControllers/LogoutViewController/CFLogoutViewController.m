@@ -9,10 +9,6 @@
 #import "CFLogoutViewController.h"
 #import "MainViewController.h"
 #import "UIImage+CFImageTool.h"
-#import "WeiboSDK.h"
-#import "UMSocialDataService.h"
-#import "UMSocialSnsPlatformManager.h"
-
 
 @interface CFLogoutViewController ()
 

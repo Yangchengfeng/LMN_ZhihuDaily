@@ -10,8 +10,7 @@
 #import "MainViewController.h"
 #import "SlideMenuViewController.h"
 // 第三方登录
-#import "UMSocialSnsPlatformManager.h"
-#import "UMSocialAccountManager.h"
+#import <UMSocialCore/UMSocialCore.h>
 #import "CFRegViewController.h"
 
 @interface CFLoginViewController ()
@@ -89,25 +88,29 @@
     switch(loginBtn.tag) {
         case 0: // 短信验证码登陆
             break;
-        case 1: {// 微博登录
+        case 1: { // 微博登录
             
-            UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
-            snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-                if (response.responseCode == UMSResponseCodeSuccess) { //  获取微博用户名、uid、token等
-                    UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina];
-                    NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
+            [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_Sina currentViewController:nil completion:^(id result, NSError *error) {
+                if (error) {
                     
-                    // 添加到NSUserDefaults
-                    NSString *uid = snsAccount.usid;
-                    NSString *username = snsAccount.userName;
-                    NSString *iconUrl = snsAccount.iconURL;
-                    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-                    [userDefault setObject:uid forKey:@"uid"];
-                    [userDefault setObject:username forKey:@"username"];
-                    [userDefault setObject:iconUrl forKey:@"iconUrl"];
+                } else {
+                    UMSocialUserInfoResponse *resp = result;
                     
-                    NSLog(@"=======%@", [userDefault objectForKey:@"uid"]);
-                }});
+                    // 授权信息
+                    NSLog(@"Sina uid: %@", resp.uid);
+                    NSLog(@"Sina accessToken: %@", resp.accessToken);
+                    NSLog(@"Sina refreshToken: %@", resp.refreshToken);
+                    NSLog(@"Sina expiration: %@", resp.expiration);
+                    
+                    // 用户信息
+                    NSLog(@"Sina name: %@", resp.name);
+                    NSLog(@"Sina iconurl: %@", resp.iconurl);
+                    NSLog(@"Sina gender: %@", resp.unionGender);
+                    
+                    // 第三方平台SDK源数据
+                    NSLog(@"Sina originalResponse: %@", resp.originalResponse);
+                }
+            }];
             
             break;
         }

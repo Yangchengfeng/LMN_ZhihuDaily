@@ -142,3 +142,5 @@ UMSocial_SDK集成说明：
 
 4.手动添加库
 SystemConfiguration.framework
+
+5.往Link Binary With Libraries里面添加：需要导入的.framework 和 .bundle
